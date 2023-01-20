@@ -1,0 +1,327 @@
+html,
+body,
+div,
+span,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+abbr,
+address,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+samp,
+small,
+strong,
+sub,
+sup,
+var,
+b,
+i,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+body {
+  line-height: 1;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+nav ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+
+a {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+/* change colours to suit your needs */
+ins {
+  background-color: #ff9;
+  color: #000;
+  text-decoration: none;
+}
+
+/* change colours to suit your needs */
+mark {
+  background-color: #ff9;
+  color: #000;
+  font-style: italic;
+  font-weight: bold;
+}
+
+del {
+  text-decoration: line-through;
+}
+
+abbr[title],
+dfn[title] {
+  border-bottom: 1px dotted;
+  cursor: help;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* change border colour to suit your needs */
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #cccccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+input,
+select {
+  vertical-align: middle;
+}
+
+
+/* ここから */
+.container {
+  background-color: #2d197c;
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+}
+
+.card {
+  background-color: white;
+  width: 50vw;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 10px;
+  padding: 30px;
+}
+
+.card__ttl {
+  font-weight: bold;
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.detail {
+  margin-right: 1rem;
+}
+
+.frex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.input-create {
+  width: 80%;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  padding: 5px;
+  font-size: 14px;
+}
+
+.select-tag {
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  outline: none;
+}
+
+option {
+  font-weight: normal;
+  display: block;
+  white-space: nowrap;
+  min-height: 1.2em;
+  padding: 0px 2px 1px;
+}
+
+table {
+  text-align: center;
+  width: 100%;
+}
+
+tr {
+  height: 50px;
+}
+
+.input-update {
+  width: 90%;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+
+}
+
+.btn {
+  border-radius: 5px;
+  font-size: 12px;
+  background-color: white;
+  font-weight: bold;
+  padding: 8px 16px;
+}
+
+.btn-logout {
+  border: 2px solid #FF0000;
+  color: #FF0000;
+}
+
+.btn-logout:hover {
+  border: 2px solid #FF0000;
+  background-color: #FF0000;
+  color: white;
+}
+
+.btn-search {
+  display: inline-block;
+  border: 2px solid #cdf119;
+  color: #cdf119;
+  text-decoration: none;
+  margin-bottom: 10px;
+  display: inline-block;
+}
+
+.btn-search:hover {
+  border: 2px solid #cdf119;
+  background-color: #cdf119;
+  color: white;
+  text-decoration: none;
+  margin-bottom: 10px;
+  display: inline-block;
+}
+
+.btn-create {
+  border: 2px solid #dc70fa;
+  color: #dc70fa;
+}
+
+.btn-create:hover {
+  border: 2px solid #dc70fa;
+  background-color: #dc70fa;
+  color: white;
+}
+
+.btn-update {
+  border: 2px solid #fa9770;
+  color: #fa9770;
+}
+
+.btn-update:hover {
+  border: 2px solid #fa9770;
+  background-color: #fa9770;
+  color: white;
+}
+
+.btn-delete {
+  border: 2px solid #71fadc;
+  color: #71fadc;
+}
+
+.btn-delete:hover {
+  border: 2px solid #71fadc;
+  background-color: #71fadc;
+  color: white;
+}
+
+.btn-back {
+  border: 2px solid #6d7170;
+  color: #6d7170;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn-back:hover {
+  border: 2px solid #6d7170;
+  background-color: #6d7170;
+  text-decoration: none;
+  display: inline-block;
+}
