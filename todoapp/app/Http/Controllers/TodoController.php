@@ -14,9 +14,9 @@ class TodoController extends Controller
 {
     public function index()
     {
-        $todos = Todo::all();
-        $tags = Tag::all();
         $user = Auth::id();
+        $todos = Todo::where('user_id',$user)->get();
+        $tags = Tag::all();
         return view('index',[
             'todos' => $todos,
             'tags' => $tags,
@@ -62,20 +62,19 @@ class TodoController extends Controller
 
     public function getSearch(FindRequest $request)
     {
+        $user = Auth::id();
+        $tags = Tag::all();
         $gettodo = session()->get('todo');
         $gettag = session()->get('tag');
         if(empty($gettodo) && empty($gettag)) {
-            $todos = Todo::all();
+            $todos = Todo::where('user_id',$user)->get();
         } elseif(empty($gettodo)) {
-            $todos = Todo::where('tag_id',$gettag)->get();
+            $todos = Todo::where('user_id',$user)->where('tag_id',$gettag)->get();
         } elseif(empty($gettag)) {
-            $todos = Todo::where('content','LIKE',"%{$gettodo}%")->get();
+            $todos = Todo::where('user_id',$user)->where('content','LIKE',"%{$gettodo}%")->get();
         } else {
-            $todos = Todo::where('tag_id',$gettag)->where('content','LIKE',"%{$gettodo}%")->get();
+            $todos = Todo::where('user_id',$user)->where('tag_id',$gettag)->where('content','LIKE',"%{$gettodo}%")->get();
         }
-
-        $user = Auth::id();
-        $tags = Tag::all();
         
         return view('find',[
             'todos' => $todos,
@@ -86,19 +85,19 @@ class TodoController extends Controller
 
     public function search(FindRequest $request)
     {
+        $user = Auth::id();
+        $tags = Tag::all();
         session()->put('todo',$request->input('content'));
         session()->put('tag',$request->input('tag_id'));
         if(empty($request->content) && empty($request->tag_id)) {
-            $todos = Todo::all();
+            $todos = Todo::where('user_id',$user)->get();
         } elseif(empty($request->content)) {
-            $todos = Todo::where('tag_id',$request->input('tag_id'))->get();
+            $todos = Todo::where('user_id',$user)->where('tag_id',$request->input('tag_id'))->get();
         } elseif(empty($request->tag_id)) {
-            $todos = Todo::where('content','LIKE',"%{$request->input('content')}%")->get();
+            $todos = Todo::where('user_id',$user)->where('content','LIKE',"%{$request->input('content')}%")->get();
         } else {
-            $todos = Todo::where('tag_id',$request->input('tag_id'))->where('content','LIKE',"%{$request->input('content')}%")->get();
+            $todos = Todo::where('user_id',$user)->where('tag_id',$request->input('tag_id'))->where('content','LIKE',"%{$request->input('content')}%")->get();
         }
-        $user = Auth::id();
-        $tags = Tag::all();
         unset($request['_token']);
         
 
