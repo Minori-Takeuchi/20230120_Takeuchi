@@ -1,5 +1,5 @@
-# アプリケーション名
-Todoアプリ
+# Todoアプリ
+
 ![ホーム画面](https://user-images.githubusercontent.com/119908511/213626646-19f51419-5b26-4760-9253-6c5521161783.png)
 ![検索画面](https://user-images.githubusercontent.com/119908511/213626704-c6a42232-e414-48f8-ad91-a507702fee56.png)
 
